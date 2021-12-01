@@ -6,6 +6,16 @@ The newsletter theme for [Ghost](http://github.com/tryghost/ghost/). This is the
 
 # Development
 
+## Docker
+
+Run `docker-compose up` to start a local Ghost instance at http://localhost:3102/ghost.
+
+To test theme changes locally and in real time:
+
+* Go to http://localhost:3102/ghost/#/settings/design/change-theme/
+* Click "Advanced" dropdown
+* Click "Activate" next to `edition`
+
 Edition styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
 
 ```bash

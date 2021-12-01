@@ -16,6 +16,7 @@ node_modules
 package-lock.json
 
 .idea/*
+.tmp/*
 *.iml
 projectFilesBackup
 
