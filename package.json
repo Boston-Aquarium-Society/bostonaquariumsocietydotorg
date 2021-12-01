@@ -112,9 +112,6 @@
             },
             "instagram_url": {
                 "type": "text"
-            },
-            "google_calendar_url": {
-                "type": "text"
             }
         }
     },
