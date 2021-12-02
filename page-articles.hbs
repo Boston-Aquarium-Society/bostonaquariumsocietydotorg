@@ -7,7 +7,7 @@
         {{/post}}
 
         <div class="post-feed text-only container medium">
-            {{#get "posts" limit="all" filter="tags:article"}}
+            {{#get "posts" filter="tags:article"}}
             {{#foreach posts}}
             {{> "loop"}}
             {{/foreach}}
