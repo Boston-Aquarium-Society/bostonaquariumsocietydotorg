@@ -1,0 +1,18 @@
+{{!< default}}
+
+<div class="content-area">
+    <main class="site-main">
+        {{#post}}
+        {{> content width="wide"}}
+        {{/post}}
+
+        <div class="post-feed text-only container medium">
+            {{#get "posts" filter="tags:article"}}
+            {{#foreach posts}}
+            {{> "loop"}}
+            {{/foreach}}
+            {{/get}}
+        </div>
+
+    </main>
+</div>
