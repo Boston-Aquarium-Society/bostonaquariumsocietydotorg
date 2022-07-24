@@ -1,16 +1,17 @@
 {{!< default}}
 
-<main class="site-main">
+<div class="content-area">
+    <main class="site-main">
+        {{#post}}
+            {{> content width="wide"}}
+        {{/post}}
+        {{#is "post"}}
+            {{#if @custom.show_related_posts}}
+                {{> related}}
+            {{/if}}
+            {{> comment}}
+        {{/is}}
+    </main>
+</div>
 
-    {{#post}}
-        {{> "content" width="wide"}}
-    {{/post}}
-
-    {{#is "post"}}
-        {{> "comment"}}
-        {{#if @custom.show_related_posts}}
-            {{> "related-posts"}}
-        {{/if}}
-    {{/is}}
-
-</main>
+{{#contentFor "body_class"}}{{#if @site.cover_image}} with-alt-header{{/if}}{{/contentFor}}

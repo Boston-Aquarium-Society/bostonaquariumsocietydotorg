@@ -1,23 +1,39 @@
 {{!< default}}
 
-<main class="site-main">
-
-    <header class="feed-header gh-canvas">
-        {{#if @custom.feed_title}}
+<div class="content-area">
+    <main class="site-main">
+        {{#if @custom.google_calendar_url}}
+        <header class="feed-header container medium">
             <div class="feed-header-wrapper">
-                <h2 class="feed-header-title">{{@custom.feed_title}}</h2>
+                <h2 class="feed-header-title">Upcoming Events</h2>
             </div>
+        </header>
+        <div class="container medium">
+            <iframe src="{{@custom.google_calendar_url}}" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
         {{/if}}
-    </header>
+        <header class="feed-header container medium">
+            {{#if @custom.feed_title}}
+                <div class="feed-header-wrapper">
+                    <h2 class="feed-header-title">{{@custom.feed_title}}</h2>
+                </div>
+            {{/if}}
+        </header>
 
-    <div class="post-feed{{#match @custom.feed_layout "!=" "Minimal"}} expanded{{/match}}{{#match @custom.feed_layout "Right thumbnail"}} right-thumbnail{{/match}}{{#match @custom.feed_layout "Text-only"}} text-only{{/match}} gh-feed gh-canvas">
-        {{#foreach posts}}
-            {{> "loop"}}
-        {{/foreach}}
-    </div>
+        <div class="post-feed{{#match @custom.feed_layout "!=" "Minimal"}} expanded{{/match}}{{#match @custom.feed_layout "Right thumbnail"}} right-thumbnail{{/match}}{{#match @custom.feed_layout "Text-only"}} text-only{{/match}} container medium">
+            {{^unless @member}}
+                {{#foreach posts}}
+                    {{> "loop"}}
+                {{/foreach}}
+            {{else}}
+                {{#foreach posts}}
+                    {{> "loop"}}
+                {{/foreach}}
+            {{/unless}}
+        </div>
 
-    {{pagination}}
+        {{pagination}}
+    </main>
+</div>
 
-</main>
-
-{{#contentFor "body_class"}}{{#if @site.cover_image}} with-full-cover is-head-transparent{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{#if @site.cover_image}} with-full-cover{{/if}}{{#if @member}} logged-in{{/if}}{{/contentFor}}
