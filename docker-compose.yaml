@@ -16,4 +16,7 @@ services:
     ports:
       - "3102:2368"
     environment:
-      - NODE_ENV=development   # ← This is the key to success
+      - NODE_ENV=development # ← This is the key to success
+
+volumes:
+  node_modules:
