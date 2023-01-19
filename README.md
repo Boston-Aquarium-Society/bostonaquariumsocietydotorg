@@ -1,12 +1,12 @@
 # Edition
 
-The newsletter theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Edition! If you're just looking to download the latest release, download the theme [here](https://github.com/TryGhost/Edition/archive/refs/heads/main.zip).
+**This is a fork of the Edition theme for the site bostonaquariumsociety.org.**
 
-&nbsp;
+The newsletter theme for [Ghost](https://github.com/TryGhost/Ghost).
 
-# Development
+## Development
 
-## Docker
+### Docker
 
 Run `docker-compose up` to start a local Ghost instance at http://localhost:3102/ghost.
 
@@ -16,6 +16,8 @@ To test theme changes locally and in real time:
 * Click "Advanced" dropdown
 * Click "Activate" next to `edition`
 
+Note that CSS changes will not be reflected unless they are compiled first. (See below)
+
 Edition styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
 
 ```bash
@@ -23,22 +25,17 @@ Edition styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'
 yarn
 
 # Run build & watch for changes
-$ yarn dev
+yarn dev
 ```
 
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
 
-The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+The `zip` Gulp task packages the theme files into `dist/edition.zip`, which you can then upload to your site.
 
 ```bash
-# create .zip file
 yarn zip
 ```
 
-# PostCSS Features Used
-
-- Autoprefixer - Don't worry about writing browser prefixes of any kind, it's all done automatically with support for the latest 2 major versions of every browser.
-
-# Copyright & License
+## Copyright & License
 
 Copyright (c) 2013-2022 Ghost Foundation - Released under the [MIT license](LICENSE).

@@ -2,8 +2,9 @@
     "name": "edition",
     "description": "A clean, minimal newsletter theme for the Ghost publishing platform",
     "version": "1.0.0",
+    "private": true,
     "engines": {
-        "ghost": ">=4.0.0"
+        "ghost": ">=5.0.0"
     },
     "license": "MIT",
     "author": {
@@ -16,6 +17,7 @@
         "theme",
         "ghost-theme"
     ],
+    "docs": "https://edition.ghost.io/about/",
     "config": {
         "posts_per_page": 3,
         "image_sizes": {
@@ -40,6 +42,11 @@
         },
         "card_assets": true,
         "custom": {
+            "navigation_layout": {
+                "type": "select",
+                "options": ["Logo on the left", "Logo in the middle", "Stacked"],
+                "default": "Logo on the left"
+            },
             "title_font": {
                 "type": "select",
                 "options": [
@@ -95,11 +102,6 @@
                 "default": "Expanded",
                 "group": "homepage"
             },
-            "show_share_links": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            },
             "show_author": {
                 "type": "boolean",
                 "default": true,
@@ -109,6 +111,10 @@
                 "type": "boolean",
                 "default": true,
                 "group": "post"
+            },
+            "show_share_links": {
+                "type": "boolean",
+                "default": true
             },
             "instagram_url": {
                 "type": "text"
@@ -121,25 +127,22 @@
     "scripts": {
         "dev": "gulp",
         "test": "gscan .",
-        "test:ci": "gscan --fatal --verbose .",
         "zip": "gulp zip"
     },
     "devDependencies": {
-        "autoprefixer": "10.4.7",
+        "@tryghost/shared-theme-assets": "2.0.1",
+        "autoprefixer": "10.4.13",
         "beeper": "2.1.0",
-        "cssnano": "5.1.10",
-        "gscan": "4.31.1",
+        "cssnano": "5.1.14",
+        "gscan": "4.36.0",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",
         "gulp-livereload": "4.0.2",
         "gulp-postcss": "9.0.1",
         "gulp-uglify": "3.0.2",
         "gulp-zip": "5.1.0",
-        "postcss": "8.4.14",
+        "postcss": "8.4.21",
         "postcss-easy-import": "4.0.0",
         "pump": "3.0.0"
-    },
-    "browserslist": [
-        "defaults"
-    ]
+    }
 }

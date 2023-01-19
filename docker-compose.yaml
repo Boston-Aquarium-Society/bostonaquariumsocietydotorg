@@ -12,6 +12,7 @@ services:
       - './.tmp/images:/var/lib/ghost/content/images'
       - './.tmp/settings:/var/lib/ghost/content/settings'
       - './:/var/lib/ghost/content/themes/edition'
+      - node_modules:/var/lib/ghost/content/themes/edition/node_modules
     ports:
       - "3102:2368"
     environment:
