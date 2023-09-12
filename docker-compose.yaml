@@ -4,6 +4,7 @@ services:
   ghost-theme-docker:
     image: ghost-theme-docker
     container_name: ghost-theme-docker
+    user: "1000:1000"
     build:
       context: .
       dockerfile: Dockerfile
